@@ -1,0 +1,196 @@
+html,
+body,
+div {
+  margin: 0;
+  padding: 0;
+}
+
+.bg-container {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+  height: 100vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  z-index: -1;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f1f4f9), to(#dff1ff));
+  background: linear-gradient(to bottom, #f1f4f9, #dff1ff);
+}
+
+.bg-container .bg-color-ball {
+  position: absolute;
+  -webkit-filter: blur(200px);
+          filter: blur(200px);
+}
+
+.bg-container .bg-color-ball:nth-child(1) {
+  top: -350px;
+  width: 600px;
+  height: 600px;
+  background: #ff359b;
+}
+
+.bg-container .bg-color-ball:nth-child(2) {
+  top: -150px;
+  left: 100px;
+  width: 500px;
+  height: 500px;
+  background: #fffd87;
+}
+
+.bg-container .bg-color-ball:nth-child(3) {
+  bottom: 50px;
+  right: 100px;
+  width: 500px;
+  height: 500px;
+  background: #00d2ff;
+}
+
+.bg-container .bg-box {
+  position: relative;
+}
+
+.bg-container .bg-box .bg-circle {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  -webkit-box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  -webkit-filter: hue-rotate(calc(var(--x) * 70deg));
+          filter: hue-rotate(calc(var(--x) * 70deg));
+  -webkit-animation: animate 10s linear infinite;
+          animation: animate 10s linear infinite;
+  -webkit-animation-delay: calc(var(--x) * -1s);
+          animation-delay: calc(var(--x) * -1s);
+}
+
+.bg-container .bg-box .bg-circle:nth-child(1) {
+  top: -50px;
+  right: -60px;
+  width: 100px;
+  height: 100px;
+}
+
+.bg-container .bg-box .bg-circle:nth-child(2) {
+  top: -300px;
+  right: 300px;
+  width: 150px;
+  height: 150px;
+}
+
+.bg-container .bg-box .bg-circle:nth-child(3) {
+  top: 200px;
+  right: -400px;
+  width: 170px;
+  height: 170px;
+}
+
+.bg-container .bg-box .bg-circle:nth-child(4) {
+  top: -400px;
+  right: -730px;
+  width: 170px;
+  height: 170px;
+}
+
+.bg-container .bg-box .bg-circle:nth-child(5) {
+  top: 0px;
+  right: 660px;
+  width: 140px;
+  height: 140px;
+}
+
+.bg-container * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@-webkit-keyframes animate {
+  0%,
+  100% {
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+  }
+  50% {
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+  }
+}
+
+@keyframes animate {
+  0%,
+  100% {
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+  }
+  50% {
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+  }
+}
+
+.glass-container {
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  -webkit-box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-container .glass-sign {
+  background: rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+  border-left: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin: 8px 6px;
+  width: 285px;
+  height: 300px;
+}
+
+.glass-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10px;
+  margin: 15px auto;
+  width: 80vw;
+  min-width: 1200px;
+}
+
+.glass-card > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+/*# sourceMappingURL=index.css.map */
