@@ -6,7 +6,6 @@ searchBtn.addEventListener('click', () => {
   //左侧导航鼠标移动效果
 let NavLeft = document.querySelector('.left')
 NavLeft.addEventListener('mouseover', (e) => {
-  console.log('鼠标移入');
   if (e.target.tagName === 'A') {
     e.target.classList.add('item-hover')
   }
@@ -19,7 +18,6 @@ NavLeft.addEventListener('mouseout', (e) => {
   //右侧导航鼠标移动效果
 let NavRight = document.querySelector('.right')
 NavRight.addEventListener('mouseover', (e) => {
-  console.log('鼠标移入');
   if (e.target.tagName === 'A') {
     e.target.classList.add('item-hover')
   }
@@ -48,4 +46,18 @@ searchInput.addEventListener('focus', (e) => {
 })
 searchInput.addEventListener('blur', (e) => {
   searchContentList.classList.remove('search-content-active')
+})
+
+//用户头像hover效果
+let navAvatar = document.querySelector('.avatar-container')
+let profilePanel = document.querySelector('.profile-panel')
+let userAvatarLi = document.querySelector('#nav-user-avatar')
+userAvatarLi.addEventListener('mouseover', (e) => {
+  navAvatar.classList.add('nav-avatar-hover')
+  profilePanel.classList.add('profile-panel-hover')
+})
+
+userAvatarLi.addEventListener('mouseout', (e) => {
+  navAvatar.classList.remove('nav-avatar-hover')
+  profilePanel.classList.remove('profile-panel-hover')
 })

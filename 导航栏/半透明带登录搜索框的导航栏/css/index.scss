@@ -7,7 +7,9 @@ h2,
 h3,
 ul,
 li,
-p {
+p,
+a,
+img {
   margin: 0;
   padding: 0;
 }
@@ -19,7 +21,7 @@ input {
   font-weight: 500;
 }
 
-.nav {
+.nav-container {
   top: 0;
   position: sticky;
   width: 100%;
@@ -28,8 +30,6 @@ input {
   justify-content: center;
   .nav-item {
     height: 49px;
-    width: 30vw;
-    min-width: 400px;
     box-sizing: border-box;
     display: flex;
     button[type=submit]>svg {
@@ -94,6 +94,16 @@ input {
       }
     }
   }
+  .left,
+  .right {
+    width: 30vw;
+    min-width: 450px;
+  }
+  .middle-nav-item {
+    width: 20vw;
+    min-width: 300px;
+    justify-content: center;
+  }
   // 搜索框下拉框内容
   .search-content {
     transition: all 1s;
@@ -139,21 +149,78 @@ input {
     height: fit-content;
     opacity: 1;
   }
-  .middle-nav-item {
-    justify-content: center;
-  }
   //导航栏右侧
   .right {
     display: flex;
     justify-content: flex-end;
-    //头像效果
-    .nav-avatar {
+    .profile-panel {
+      transition: .7s;
+      overflow: hidden;
+      height: 0px;
+      opacity: 0;
+      top: 49px;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      width: 200px;
+      background-color: red;
+      z-index: -1;
+      background-color: rgba(0, 0, 0, .4);
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      ul {
+        margin-top: 20px;
+        margin-bottom: 5px;
+        display: flex;
+        flex-direction: column;
+        li {
+          list-style: none;
+          display: flex;
+          justify-content: center;
+          a {
+            width: 100%;
+            display: flex;
+            text-decoration: none;
+            font-size: 18px;
+            color: inherit;
+            padding: 5px 10px;
+            margin-right: 3px;
+            justify-content: left;
+            transition: .5s;
+            border-radius: 4px;
+          }
+          .li-a-hover {
+            background-color: rgba(0, 0, 0, .7);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+          }
+        }
+      }
+    }
+    .profile-panel-hover {
+      height: fit-content;
+      opacity: 1;
+    }
+    .avatar-container {
+      display: flex;
+      position: relative;
+      box-sizing: border-box;
       border-radius: 50%;
-      transition: .5s;
+      overflow: hidden;
+      //头像效果
+      .nav-avatar {
+        border-radius: 50%;
+        transition: .5s;
+      }
     }
     //鼠标悬停头像效果
     .nav-avatar-hover {
       transform: rotate(360deg);
+      height: 65px;
+      width: 65px;
+      box-shadow: 0 0 2px 4px rgba(0, 0, 0, 0.4);
+      .nav-avatar {
+        transform: rotate(360deg);
+      }
     }
   }
 }
