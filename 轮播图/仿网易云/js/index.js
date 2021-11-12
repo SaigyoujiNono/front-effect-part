@@ -42,7 +42,7 @@
   let currentSlide = -1
 
   //轮播时间
-  let loopTime = 8000
+  let loopTime = 6000
 
   // 定时器
   let slidersTimers = null
@@ -125,7 +125,15 @@
   selectZone.addEventListener('click', (e) => {
     if (e.target.tagName === 'A') {
       let clickIndex = pictureInfo.points.findIndex(n => n === e.target)
-      selectSlider(clickIndex)
+      let flag = false
+      if (clickIndex === currentSlide) {
+        return
+      } else if (clickIndex > currentSlide) {
+        flag = false
+      } else {
+        flag = true
+      }
+      selectSlider(clickIndex, flag)
       Array.from(selectZone.children).forEach(n => {
         n.classList.remove('item-active')
       })
