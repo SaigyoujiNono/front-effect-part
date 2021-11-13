@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f1f1f1;
+}
+
+#card-show-container {
+  width: 1150px;
+  background-color: white;
+  margin: 100px auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  .card-show {
+    box-sizing: border-box;
+    border-top: 1px solid gray;
+    border-left: 1px solid gray;
+    margin: 12px 18px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 250px;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+    // 卡片头图
+    .card-img {
+      a {
+        display: flex;
+        &:hover {
+          .card-img-masking {
+            height: 150px;
+          }
+        }
+        .card-img {
+          position: relative;
+          height: 150px;
+          width: 250px;
+        }
+        .card-img-masking {
+          position: absolute;
+          overflow: hidden;
+          width: 250px;
+          height: 0;
+          transition: 0.5s;
+          bottom: 150px;
+          background-color: rgba(0, 0, 0, 0.52);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          >span {
+            padding: 6px;
+            color: rgba(255, 255, 255, 0.9);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+          }
+        }
+      }
+    }
+    // 卡片标题
+    .card-title {
+      padding-left: 5px;
+      margin-top: 0.2em;
+      margin-bottom: 0.2em;
+      position: relative;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-weight: bold;
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+    .card-author {
+      position: relative;
+      font-size: 14px;
+      color: gray;
+      display: flex;
+      align-items: center;
+      >img {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+      }
+      >span {
+        margin-left: 5px;
+        margin-right: 10px;
+        >a {
+          text-decoration: none;
+          color: inherit;
+        }
+        &:nth-last-of-type(1) {
+          position: absolute;
+          right: 0;
+          font-weight: 600;
+          color: rgb(48, 48, 48);
+        }
+      }
+    }
+    .card-info {
+      margin-left: 5px;
+      margin-right: 5px;
+      p {
+        font-size: 14px;
+        text-indent: 2em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        height: 60px;
+      }
+      height: 60px;
+    }
+    .card-footer {
+      margin-left: 5px;
+      margin-right: 5px;
+      display: flex;
+      flex-direction: row;
+      height: 30px;
+      .buy-btn {
+        width: 40%;
+        display: flex;
+        align-items: center;
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 80%;
+          height: 100%;
+          border-radius: 6px;
+          background-color: rgb(63, 169, 240);
+          text-decoration: none;
+          color: white;
+        }
+      }
+      .buy-price {
+        color: red;
+        width: 25%;
+        display: flex;
+        align-items: center;
+        span {
+          margin-left: 5px;
+          font-size: 18px;
+        }
+      }
+      .current-learn {
+        display: flex;
+        align-items: center;
+        width: 35%;
+        font-size: 14px;
+        color: gray;
+      }
+    }
+  }
+}
