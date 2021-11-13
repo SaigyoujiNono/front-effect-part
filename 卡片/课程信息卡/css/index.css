@@ -23,6 +23,15 @@ body {
 }
 
 #card-show-container .card-show {
+  -webkit-animation-name: entry_anime;
+          animation-name: entry_anime;
+  -webkit-animation-duration: .7s;
+          animation-duration: .7s;
+  -webkit-animation-delay: calc(var(--et) * 0.05);
+          animation-delay: calc(var(--et) * 0.05);
+  opacity: 0;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-top: 1px solid gray;
@@ -193,6 +202,10 @@ body {
   color: white;
 }
 
+#card-show-container .card-show .card-footer .buy-btn a:hover {
+  background-color: #62befc;
+}
+
 #card-show-container .card-show .card-footer .buy-price {
   color: red;
   width: 25%;
@@ -219,5 +232,27 @@ body {
   width: 35%;
   font-size: 14px;
   color: gray;
+}
+
+@-webkit-keyframes entry_anime {
+  from {
+    opacity: 0;
+    top: 50px;
+  }
+  to {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+@keyframes entry_anime {
+  from {
+    opacity: 0;
+    top: 50px;
+  }
+  to {
+    opacity: 1;
+    top: 0;
+  }
 }
 /*# sourceMappingURL=index.css.map */
