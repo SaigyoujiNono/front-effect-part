@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>音乐播放器</title>
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="play-bar">
+    <audio id="playground" src="./audio/a_hisa - Town of Windmill.mp3">
+    </audio>
+    <div class="play-container">
+      <!-- 播放控制 -->
+      <div class="play-controller">
+        <div id="play-pre" onclick="audioPre()"><i class="fa fa-step-backward"></i></div>
+        <div id="play-control" onclick="audioPauseOrPlay()"><i id="play-control-i" class="fa fa-pause-circle-o"></i></div>
+        <div id="play-next" onclick="audioNext()"><i class="fa fa-step-forward"></i></div>
+      </div>
+      <!-- 进度条区域 -->
+      <div class="play-show">
+        <div class="title-img">
+          <img id='audio-img' src="./img/1.jpeg" alt="">
+        </div>
+        <div class="play-info">
+          <div class="audio-info">
+            <a href="javascript:void(0)" id="audio-title" class="title">Town of Windmill</a>
+            <a href="javascript:void(0)" id="audio-author" class="author">a_hisa</a>
+          </div>
+          <div class="audio-progress">
+            <div id="audio-progress" class="progress">
+              <div id="progress-cache"></div>
+              <div id="progress-current" class="progress-current">
+                <div id="progress-cursor" class="progress-cursor">
+                  <span></span>
+                </div>
+              </div>
+            </div>
+            <div class="progress-info">
+              <span id="audio-current">00:00</span>
+              <span>/</span>
+              <span id="audio-total">00:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 其他 -->
+      <div class="play-other">
+        <!-- 音量设置 -->
+        <div class="volume">
+          <div class="volume-icon">
+            <i class="fa fa-volume-up"></i>
+          </div>
+          <div id="volume-progress" class="volume-progress">
+            <div id="volume-current" class="progress-current">
+              <div class="progress-cursor">
+                <span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./js/index.js"></script>
+</body>
+
+</html>

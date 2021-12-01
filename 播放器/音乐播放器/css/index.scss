@@ -1,0 +1,181 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+$shadow1: rgba(0, 0, 0, 0.5);
+$barHeight: 50px;
+$fontNormal:#8f8f8f;
+$fontHightlight:#e8e8e8;
+@mixin shadow-inset($val:0, $dis:5px) {
+  box-shadow: inset $val $val $dis $shadow1,
+  inset #{-$val} #{-$val} $dis $shadow1;
+}
+
+.play-bar {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  min-width: 960px;
+  height: $barHeight;
+  background-color: #222222;
+  filter: opacity(90%);
+  box-shadow: 0 -2px 4px $shadow1;
+  .play-container {
+    height: 100%;
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    //控制区域
+    .play-controller {
+      width: 160px;
+      display: flex;
+      div {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $fontNormal;
+        &#play-pre {
+          font-size: 20px;
+        }
+        &#play-control {
+          color: $fontHightlight;
+          font-size: 36px;
+        }
+        &#play-next {
+          font-size: 20px;
+        }
+        &:hover {
+          i {
+            color: $fontHightlight;
+            text-shadow: 0 0 0.2em #ffffff;
+          }
+        }
+      }
+    }
+    //中间区域
+    .play-show {
+      width: 800px;
+      display: flex;
+      .title-img {
+        width: $barHeight;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+          height: 80%;
+          width: $barHeight*0.8;
+        }
+      }
+      .play-info {
+        flex: 1;
+        .audio-info {
+          height: 25px;
+          .title {
+            color: $fontHightlight;
+            margin: 0 8px;
+          }
+          .author {
+            color: $fontNormal;
+            margin: 0 8px;
+            font-size: 0.9em;
+          }
+        }
+        .audio-progress {
+          height: 35px;
+          display: flex;
+          padding: 0 8px;
+          .progress {
+            position: relative;
+            margin-top: 4px;
+            width: 600px;
+            height: 12px;
+            background-color: #191919;
+            @include shadow-inset(5px);
+            border-radius: 10px;
+            #progress-cache {
+              position: absolute;
+              left: 0;
+              top: 0;
+              background-color: #535353;
+              width: 0;
+              height: 100%;
+              border-radius: inherit;
+            }
+          }
+          .progress-info {
+            flex: 1;
+            height: 100%;
+            padding: 0 8px;
+            color: $fontNormal;
+            #audio-current {
+              color: $fontHightlight;
+            }
+            #audio-total {
+              font-size: 0.9em;
+            }
+          }
+        }
+      }
+    }
+    //其他控件
+    .play-other {
+      width: 240px;
+      color: $fontNormal;
+      display: flex;
+      align-items: center;
+      .volume {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        .volume-icon {
+          font-size: 24px;
+        }
+        .volume-progress {
+          position: relative;
+          margin-left: 12px;
+          width: 150px;
+          height: 12px;
+          background-color: #191919;
+          border-radius: 10px;
+          @include shadow-inset(5px);
+        }
+      }
+    }
+  }
+  .progress-current {
+    background-color: #c70c0c;
+    width: 0;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: inherit;
+  }
+  //游标
+  .progress-cursor {
+    position: absolute;
+    right: -9px;
+    top: -3px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    height: 18px;
+    width: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px $shadow1;
+    span {
+      width: 8px;
+      height: 8px;
+      background-color: #c70c0c;
+      border-radius: inherit;
+    }
+  }
+}
